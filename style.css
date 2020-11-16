@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#gamebox {
+    background: lightgray;
+    width:68vmin;
+    height: 100vmin;
+    position: absolute;
+    left:50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}
+
+#gameover {
+    width:68vmin;
+    height: 100vmin;
+    position: absolute;
+    left:50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+    
+    z-index: 3;
+    background:rgba(0, 0, 0, 0.3);
+    /*background: repeating-linear-gradient(45deg, transparent, transparent 10px, black 10px, black 20px);*/
+    font-family: 'Orbitron';
+    color: black;
+    padding-top:50vh;
+    font-size: 2vw;
+    font-weight: 900;
+    text-align: center;
+}
+
+.ontop {
+    z-index: 2;
+}
+
+#arrowdiv {
+    position: absolute;
+    height: 18vmin;
+    bottom: 3vmin;
+    margin-bottom: 0px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}
+
+#arrow {
+    height: 100%;
+}
+
+/*#arrowball {
+    position: absolute;
+    height:8vmin;
+    width:8vmin;
+    bottom: 8vmin;
+    left:50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}*/
+#arrowballdiv {
+    position:absolute;
+    z-index: 1;
+}
+
+.balldiv0, .balldiv1 {
+    position: absolute;
+    height:8vmin;
+    width:8vmin;
+/*    display: inline-block;*/
+}
+
+.balldivl {
+    height:8vmin;
+    width:8vmin;
+    margin:10%;
+/*    display: inline-block;*/
+}
+
+#level {
+    background: repeating-linear-gradient(45deg, black, black 3px, lightgray 3px, lightgray 6px);
+    width:10vmin;
+    height: 55vmin;
+    
+    position: absolute;
+/*    left:28vw;*/
+    top:10%;
+    
+/*    left:30%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);*/
+    left:-20%;
+
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,1), 0px 3px 15px 2px rgba(0,0,0,1);
+    border: 1px solid #5c5c5c;
+    border-radius:15px;
+}
+/*.balldiv1 {
+    transform: translate(50%, 0);
+}*/
+
+.ball {
+    height: 100%;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.fall {
+    animation-name: fall;
+    animation-duration: 2s;
+/*     animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) */
+/* animation-timing-function: all 500ms cubic-bezier(0.310, 0.440, 0.445, 1.650) */
+animation-timing-function: cubic-bezier(0,-0.24,.78,-0.25)
+}
+
+@keyframes fall {
+    100% {top: 100vh;}
+}
+
+
+.left {
+    animation-name: left;
+    animation-duration: 2s;
+/*     animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) */
+/* animation-timing-function: all 500ms cubic-bezier(0.310, 0.440, 0.445, 1.650) */
+animation-timing-function: linear;
+}
+
+@keyframes left {
+    0% {left: 0vw;}
+    100% {left: -10vw;}
+}
+
+.right {
+    animation-name: right;
+    animation-duration: 2s;
+/*     animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) */
+/* animation-timing-function: all 500ms cubic-bezier(0.310, 0.440, 0.445, 1.650) */
+animation-timing-function: linear;
+}
+
+@keyframes right {
+    0% {left: 0vw;}
+    100% {left: 10vw;}
+}
